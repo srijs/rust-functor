@@ -88,6 +88,18 @@ impl<'a, A, B> Bivariant<'a, B> for std::marker::PhantomData<A> {
     fn xmap(self) -> Self::Output { std::marker::PhantomData }
 }
 
+impl<A> NaturalTransform<Option<A>> for Box<A> {
+    fn transform(self) -> Option<A> {
+        Option::Some(*self)
+    }
+}
+
+impl<A, E> NaturalTransform<Option<A>> for Result<A, E> {
+    fn transform(self) -> Option<A> {
+        self.ok()
+    }
+}
+
 #[test]
 fn it_works() {
 }
