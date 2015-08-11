@@ -1,6 +1,3 @@
-use parametric::{Param, ReParam};
-use super::{Invariant, InvariantOnce};
-
 pub trait Iso<A, B> {
     fn to(&self, A) -> B;
     fn from(&self, B) -> A;
