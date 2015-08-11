@@ -40,3 +40,19 @@ impl<A> Param for PhantomData<A> {
 impl<A, B> ReParam<B> for PhantomData<A> {
     type Output = PhantomData<B>;
 }
+
+impl<A> Param for Box<A> {
+    type Param = A;
+}
+
+impl<A, B> ReParam<B> for Box<A> {
+    type Output = Box<B>;
+}
+
+impl<A, E> Param for Result<A, E> {
+    type Param = A;
+}
+
+impl<A, B, E> ReParam<B> for Result<A, E> {
+    type Output = Result<B, E>;
+}
