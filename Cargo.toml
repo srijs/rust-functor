@@ -1,0 +1,8 @@
+[package]
+name = "functor"
+version = "0.1.0"
+authors = ["Sam Rijs <srijs@airpost.net>"]
+description = "Covariant, contravariant, invariant and bivariant functors."
+documentation = "http://srijs.github.io/rust-functor/functor"
+repository = "https://github.com/srijs/rust-functor"
+license = "MIT"
